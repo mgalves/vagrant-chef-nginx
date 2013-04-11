@@ -1,0 +1,12 @@
+server {
+  listen   80;
+  server_name  <%= node['hostname'] %>;
+
+  access_log  <%= node['nginx']['log_dir'] %>/helloworld.access.log;
+  error_log  <%= node['nginx']['log_dir'] %>/helloworld.error.log;
+
+  location / {
+    root   <%= node["app"]["web_dir"] %>;
+    index  index.html index.htm;
+  }
+}

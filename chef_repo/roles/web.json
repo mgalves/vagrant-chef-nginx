@@ -1,0 +1,26 @@
+{
+  "name": "web",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The base role for systems that serve HTTP traffic",
+  "default_attributes": {
+    "app": {
+      "name": "helloworld",
+      "web_dir": "/var/www/helloworld",
+      "url": "helloworld.com"
+    },
+    "user":{
+      "name": "vagrant"
+    },
+    "nginx": {
+      "default_site_enabled": false
+    }
+  },
+  "run_list": [
+    "recipe[runit]",
+    "recipe[apt]",
+    "recipe[ohai]",
+    "recipe[nginx]",
+    "recipe[main]"
+  ]
+}
