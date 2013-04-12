@@ -1,7 +1,7 @@
 
 1. Instale o VirtualBox, disponível em <https://www.virtualbox.org/>;
 
-1. Instale Vagrant, disponivel no site <http://vagrantup.com>;
+1. Instale Vagrant >= 1.1.X, disponivel no site <http://vagrantup.com>;
 
 1. Instale ruby 1.9;
 
@@ -9,13 +9,14 @@
 
     `> gem install chef`
 
-1. Instale vagrant-omnibus:
+1. Instale vagrant-omnibus. Este plugin garante que o Chef estará instalado na versão correta na VM:
 
-    `> gem install vagrant-omnibus`
+    `> vagrant plugin install vagrant-omnibus`
+
 
 1. Instale uma box do Ubuntu 12.04 no Vagrant :
 
-    `> vagrant box add http://dl.dropbox.com/u/1537815/precise64.box`
+    `> vagrant box add precise64 http://dl.dropbox.com/u/1537815/precise64.box`
 
 (caso prefira outro sabor de Linux, existe uma lista bastante grande de listadas em <http://www.vagrantbox.es/>)
 
@@ -29,6 +30,6 @@
 
     `> vagrant up`
 
-1. Acesse <http://192.168.10.33/>;
+1. Acesse <http://192.168.33.10/>;
 
 1. Voilá!
